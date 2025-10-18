@@ -1,0 +1,74 @@
+{
+  "url": "https://example.com",
+  "analyzedAt": "2025-10-18T13:39:00Z",
+  "processingTime": 24.5,
+  "overallScore": 65,
+  "scores": {
+    "technical": 70,
+    "onpage": 60,
+    "performance": 55,
+    "content": 75,
+    "mobile": 65
+  },
+  "summary": {
+    "criticalIssues": 3,
+    "highPriorityIssues": 8,
+    "mediumPriorityIssues": 12,
+    "lowPriorityIssues": 5,
+    "totalRecommendations": 28
+  },
+  "quickWins": [
+    {
+      "id": "rec-003",
+      "title": "Add missing alt text to images",
+      "impact": "High",
+      "effort": "Easy",
+      "estimatedTime": "30 minutes"
+    }
+  ],
+  "coreWebVitals": {
+    "mobile": {
+      "LCP": {
+        "value": 2.8,
+        "unit": "s",
+        "rating": "needs improvement"
+      },
+      "FID": {
+        "value": 95,
+        "unit": "ms",
+        "rating": "good"
+      },
+      "CLS": {
+        "value": 0.15,
+        "unit": "score",
+        "rating": "needs improvement"
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "id": "rec-001",
+      "category": "Performance",
+      "title": "Optimize image sizes and formats",
+      "severity": "High",
+      "impact": "High",
+      "effort": "Medium",
+      "estimatedTime": "2-4 hours",
+      "description": "Multiple images are not optimized for web delivery.",
+      "actionItems": [
+        {
+          "step": 1,
+          "action": "Convert images to WebP format"
+        },
+        {
+          "step": 2,
+          "action": "Implement responsive images with srcset"
+        }
+      ],
+      "expectedImprovement": {
+        "LCP": "Reduce by 40-50%",
+        "overallScore": "+8 points"
+      }
+    }
+  ]
+}
