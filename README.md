@@ -48,6 +48,8 @@ python seo_agent.py --url https://example.com --format markdown
 
 📄 **[Product Requirements Document (PRD)](./PRD.md)** - Comprehensive MVP specifications, architecture, and implementation guide
 
+🤖 **[AWS Agent Implementation Guide](./AWS_AGENT_GUIDE.md)** - Detailed guide for implementing the AI agent on AWS with Bedrock
+
 ## Architecture
 
 The system consists of five main components:

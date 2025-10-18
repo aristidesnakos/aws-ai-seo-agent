@@ -32,6 +32,7 @@ This repository contains comprehensive documentation for the AWS AI SEO Agent MV
 | Document | Description | Audience |
 |----------|-------------|----------|
 | **[ARCHITECTURE.md](./ARCHITECTURE.md)** (14KB) | Detailed technical architecture, AWS services, data flow, and system design | Developers, DevOps, Architects |
+| **[AWS_AGENT_GUIDE.md](./AWS_AGENT_GUIDE.md)** (30KB) | AWS Agent implementation with Bedrock, tools, guardrails, and deployment | Developers, AWS Architects |
 | **[API.md](./API.md)** (17KB) | Complete REST API specification with examples and error codes | Developers, API Consumers |
 | **[IMPLEMENTATION.md](./IMPLEMENTATION.md)** (22KB) | Step-by-step implementation guide with code examples | Developers |
 
@@ -71,7 +72,7 @@ This repository contains comprehensive documentation for the AWS AI SEO Agent MV
 → Start with [README.md](./README.md) and [PRD.md](./PRD.md)
 
 **"I want to implement this solution"**
-→ Read [IMPLEMENTATION.md](./IMPLEMENTATION.md) and [ARCHITECTURE.md](./ARCHITECTURE.md)
+→ Read [AWS_AGENT_GUIDE.md](./AWS_AGENT_GUIDE.md), [IMPLEMENTATION.md](./IMPLEMENTATION.md) and [ARCHITECTURE.md](./ARCHITECTURE.md)
 
 **"I want to use the API"**
 → Check [API.md](./API.md) and [QUICK_REFERENCE.md](./QUICK_REFERENCE.md)
@@ -103,9 +104,9 @@ An intelligent AI agent that analyzes web pages and provides actionable SEO reco
 
 ## 📈 Document Statistics
 
-- **Total Documentation**: ~108KB of comprehensive documentation
-- **Total Documents**: 9 markdown files + 4 config files + 1 example + 1 LICENSE
-- **Code Examples**: 20+ complete examples across all documents
+- **Total Documentation**: ~138KB of comprehensive documentation
+- **Total Documents**: 10 markdown files + 4 config files + 1 example + 1 LICENSE
+- **Code Examples**: 30+ complete examples across all documents
 - **API Endpoints Documented**: 3 (with more planned)
 - **AWS Services Covered**: 8+ services with detailed explanations
 
@@ -176,16 +177,18 @@ All documentation is written in **Markdown** format for:
 
 ### For Developers
 1. README.md - Overview
-2. ARCHITECTURE.md - System design
-3. IMPLEMENTATION.md - How to build
-4. API.md - Interface specification
-5. CONTRIBUTING.md - Development workflow
+2. AWS_AGENT_GUIDE.md - AWS agent architecture
+3. ARCHITECTURE.md - System design
+4. IMPLEMENTATION.md - How to build
+5. API.md - Interface specification
+6. CONTRIBUTING.md - Development workflow
 
 ### For DevOps Engineers
-1. ARCHITECTURE.md - Infrastructure
-2. IMPLEMENTATION.md - Deployment
-3. .env.example - Configuration
-4. CONTRIBUTING.md - CI/CD workflow
+1. AWS_AGENT_GUIDE.md - AWS infrastructure
+2. ARCHITECTURE.md - Infrastructure
+3. IMPLEMENTATION.md - Deployment
+4. .env.example - Configuration
+5. CONTRIBUTING.md - CI/CD workflow
 
 ### For API Consumers
 1. README.md - Overview
