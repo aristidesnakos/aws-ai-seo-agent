@@ -1,0 +1,13 @@
+# Example terraform.tfvars file
+# Copy this file to terraform.tfvars and update with your values
+
+aws_region         = "us-east-1"
+environment        = "dev"
+project_name       = "seo-agent"
+pagespeed_api_key  = "YOUR_PAGESPEED_API_KEY_HERE"
+bedrock_model_id   = "anthropic.claude-haiku-4.5-20250514-v1:0"
+lambda_runtime     = "python3.11"
+api_rate_limit     = 100
+
+temp_data_retention_days = 1
+reports_retention_days   = 90
