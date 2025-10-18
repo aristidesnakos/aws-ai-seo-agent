@@ -79,7 +79,7 @@ AWS_ACCOUNT_ID=123456789012
 PAGESPEED_API_KEY=your_api_key_here
 
 # Bedrock Configuration
-BEDROCK_MODEL_ID=anthropic.claude-3-sonnet-20240229-v1:0
+BEDROCK_MODEL_ID=anthropic.claude-haiku-4.5-20250514-v1:0
 BEDROCK_REGION=us-east-1
 
 # S3 Buckets

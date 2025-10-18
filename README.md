@@ -27,6 +27,14 @@ The AWS AI SEO Agent takes a URL, fetches performance data from Google PageSpeed
 git clone https://github.com/aristidesnakos/aws-ai-seo-agent.git
 cd aws-ai-seo-agent
 
+# Option 1: Deploy with Terraform (Recommended)
+cd terraform
+cp terraform.tfvars.example terraform.tfvars
+# Edit terraform.tfvars with your API keys
+terraform init
+terraform apply
+
+# Option 2: Manual deployment
 # Install dependencies
 pip install -r requirements.txt
 

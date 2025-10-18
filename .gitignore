@@ -150,6 +150,8 @@ samconfig.toml
 .terraform/
 .terraform.lock.hcl
 *.tfvars
+!terraform.tfvars.example
+terraform/lambda_placeholder.zip
 
 # CloudFormation
 packaged-template.yaml

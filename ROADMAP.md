@@ -186,7 +186,7 @@ Build the most comprehensive, AI-powered SEO analysis platform that helps busine
 ### Current Stack (MVP)
 - Python 3.11
 - AWS Lambda
-- AWS Bedrock (Claude 3)
+- AWS Bedrock (Claude Haiku 4.5)
 - Amazon S3
 - API Gateway
 

@@ -72,7 +72,7 @@ This repository contains comprehensive documentation for the AWS AI SEO Agent MV
 → Start with [README.md](./README.md) and [PRD.md](./PRD.md)
 
 **"I want to implement this solution"**
-→ Read [AWS_AGENT_GUIDE.md](./AWS_AGENT_GUIDE.md), [IMPLEMENTATION.md](./IMPLEMENTATION.md) and [ARCHITECTURE.md](./ARCHITECTURE.md)
+→ Read [terraform/README.md](./terraform/README.md), [AWS_AGENT_GUIDE.md](./AWS_AGENT_GUIDE.md), [IMPLEMENTATION.md](./IMPLEMENTATION.md) and [ARCHITECTURE.md](./ARCHITECTURE.md)
 
 **"I want to use the API"**
 → Check [API.md](./API.md) and [QUICK_REFERENCE.md](./QUICK_REFERENCE.md)
@@ -104,11 +104,12 @@ An intelligent AI agent that analyzes web pages and provides actionable SEO reco
 
 ## 📈 Document Statistics
 
-- **Total Documentation**: ~138KB of comprehensive documentation
-- **Total Documents**: 10 markdown files + 4 config files + 1 example + 1 LICENSE
+- **Total Documentation**: ~150KB of comprehensive documentation
+- **Total Documents**: 10 markdown files + 4 config files + 1 example + 11 Terraform files + 1 LICENSE
 - **Code Examples**: 30+ complete examples across all documents
 - **API Endpoints Documented**: 3 (with more planned)
 - **AWS Services Covered**: 8+ services with detailed explanations
+- **Infrastructure as Code**: Complete Terraform configuration for automated deployment
 
 ---
 
@@ -184,11 +185,12 @@ All documentation is written in **Markdown** format for:
 6. CONTRIBUTING.md - Development workflow
 
 ### For DevOps Engineers
-1. AWS_AGENT_GUIDE.md - AWS infrastructure
-2. ARCHITECTURE.md - Infrastructure
-3. IMPLEMENTATION.md - Deployment
-4. .env.example - Configuration
-5. CONTRIBUTING.md - CI/CD workflow
+1. terraform/README.md - Infrastructure as Code
+2. AWS_AGENT_GUIDE.md - AWS infrastructure
+3. ARCHITECTURE.md - Infrastructure
+4. IMPLEMENTATION.md - Deployment
+5. .env.example - Configuration
+6. CONTRIBUTING.md - CI/CD workflow
 
 ### For API Consumers
 1. README.md - Overview

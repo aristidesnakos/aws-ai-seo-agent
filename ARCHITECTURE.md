@@ -35,7 +35,7 @@
               │   AI Analysis Engine         │
               │   (Lambda + AWS Bedrock)     │
               │   - Data Synthesis           │
-              │   - Claude 3 Sonnet          │
+              │   - Claude Haiku 4.5          │
               │   - Recommendation Gen       │
               └──────────┬───────────────────┘
                          │
@@ -184,13 +184,13 @@ response = requests.get(url, params=params)
 **Responsibilities**:
 1. Load PageSpeed and content data
 2. Construct AI prompt with data
-3. Call AWS Bedrock (Claude 3 Sonnet)
+3. Call AWS Bedrock (Claude Haiku 4.5)
 4. Parse AI response
 5. Structure recommendations
 6. Return analysis results
 
 **Environment Variables**:
-- `BEDROCK_MODEL_ID` (e.g., `anthropic.claude-3-sonnet-20240229-v1:0`)
+- `BEDROCK_MODEL_ID` (e.g., `anthropic.claude-haiku-4.5-20250514-v1:0`)
 - `BEDROCK_REGION`
 - `MAX_TOKENS`
 - `TEMPERATURE`
@@ -202,7 +202,7 @@ response = requests.get(url, params=params)
 
 **Bedrock Configuration**:
 ```python
-modelId = "anthropic.claude-3-sonnet-20240229-v1:0"
+modelId = "anthropic.claude-haiku-4.5-20250514-v1:0"
 inference_config = {
     "maxTokens": 4096,
     "temperature": 0.7,
@@ -286,7 +286,7 @@ sequenceDiagram
 
 ### AI/ML
 - **AWS Bedrock**: Foundational model service
-  - Model: Claude 3 Sonnet
+  - Model: Claude Haiku 4.5
   - On-demand pricing
   - Region: us-east-1 (or supported region)
 
@@ -373,10 +373,10 @@ sequenceDiagram
 ### Estimated Cost per Analysis
 - Lambda invocations: $0.001
 - Lambda compute: $0.005
-- Bedrock API call: $0.030
+- Bedrock API call: $0.006
 - S3 storage: $0.0001
 - API Gateway: $0.001
-- **Total**: ~$0.037 per analysis
+- **Total**: ~$0.013 per analysis
 
 ## Deployment Strategy
 

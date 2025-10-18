@@ -12,7 +12,7 @@ This document provides detailed guidance on implementing the AWS AI SEO Agent us
 
 The AWS AI SEO Agent follows the **Agent with Tools** pattern, which consists of:
 
-1. **Foundation Model (FM)** - AWS Bedrock (Claude 3 Sonnet)
+1. **Foundation Model (FM)** - AWS Bedrock (Claude Haiku 4.5)
 2. **Orchestration Layer** - AWS Lambda functions
 3. **Action Groups (Tools)** - Specialized functions for specific tasks
 4. **Knowledge Bases** - Optional RAG for SEO best practices
@@ -57,12 +57,12 @@ Final Report (JSON/Markdown)
 ### 1. Foundation Model Configuration
 
 **Service**: AWS Bedrock  
-**Model**: anthropic.claude-3-sonnet-20240229-v1:0
+**Model**: anthropic.claude-haiku-4.5-20250514-v1:0
 
 **Configuration**:
 ```json
 {
-  "modelId": "anthropic.claude-3-sonnet-20240229-v1:0",
+  "modelId": "anthropic.claude-haiku-4.5-20250514-v1:0",
   "inferenceConfig": {
     "maxTokens": 4096,
     "temperature": 0.7,
@@ -74,6 +74,8 @@ Final Report (JSON/Markdown)
 
 **Key Features**:
 - **Context Window**: 200K tokens (sufficient for large web pages)
+- **Speed**: 3x faster than Claude 3 Sonnet with lower latency
+- **Cost**: 80% lower cost per token compared to Claude 3 Sonnet
 - **Reasoning Capabilities**: Multi-step analysis and planning
 - **Tool Use**: Native support for function calling
 - **Structured Output**: JSON mode for consistent formatting
@@ -608,7 +610,7 @@ Tool Use: generate_report
 ### Required AWS Services
 
 1. **AWS Bedrock**
-   - Model: Claude 3 Sonnet
+   - Model: Claude Haiku 4.5
    - Region: us-east-1 (or region with Bedrock access)
    - Permissions: `bedrock:InvokeModel`, `bedrock:InvokeModelWithResponseStream`
 
@@ -650,7 +652,7 @@ Tool Use: generate_report
         "bedrock:InvokeModel",
         "bedrock:InvokeModelWithResponseStream"
       ],
-      "Resource": "arn:aws:bedrock:*::foundation-model/anthropic.claude-3-sonnet-*"
+      "Resource": "arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4.5-*"
     },
     {
       "Effect": "Allow",
@@ -694,7 +696,7 @@ Tool Use: generate_report
 
 **Input Handler Lambda**:
 ```bash
-BEDROCK_MODEL_ID=anthropic.claude-3-sonnet-20240229-v1:0
+BEDROCK_MODEL_ID=anthropic.claude-haiku-4.5-20250514-v1:0
 BEDROCK_REGION=us-east-1
 PAGESPEED_LAMBDA_ARN=arn:aws:lambda:region:account:function:pagespeed-collector
 CRAWLER_LAMBDA_ARN=arn:aws:lambda:region:account:function:content-crawler
@@ -795,7 +797,7 @@ Resources:
       MemorySize: 512
       Environment:
         Variables:
-          BEDROCK_MODEL_ID: anthropic.claude-3-sonnet-20240229-v1:0
+          BEDROCK_MODEL_ID: anthropic.claude-haiku-4.5-20250514-v1:0
           S3_TEMP_BUCKET: !Ref TempDataBucket
           S3_REPORTS_BUCKET: !Ref ReportsBucket
 
@@ -958,17 +960,17 @@ log_structured('tool_executed', {
 **Per Analysis**:
 - Lambda invocations (5 functions): $0.0001
 - Lambda compute (avg 25 seconds): $0.0050
-- Bedrock API call (4K tokens): $0.0300
+- Bedrock API call (4K tokens): $0.0060
 - S3 storage/operations: $0.0001
 - API Gateway: $0.0001
-- **Total**: ~$0.0453 per analysis
+- **Total**: ~$0.0113 per analysis
 
 **Monthly (1,000 analyses)**:
-- Total: ~$45.30
+- Total: ~$11.30
 - Breakdown:
-  - Bedrock: $30.00 (66%)
-  - Lambda: $5.10 (11%)
-  - Other: $10.20 (23%)
+  - Bedrock: $6.00 (53%)
+  - Lambda: $5.10 (45%)
+  - Other: $0.20 (2%)
 
 ### Optimization Strategies
 
@@ -1178,7 +1180,7 @@ locust -f load_test.py --host=https://api.example.com
 
 - [AWS Bedrock Documentation](https://docs.aws.amazon.com/bedrock/)
 - [AWS Bedrock Agents](https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html)
-- [Claude 3 Model Card](https://www.anthropic.com/claude)
+- [Claude Haiku 4.5 Model Card](https://www.anthropic.com/claude)
 - [Bedrock Guardrails](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html)
 - [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
 

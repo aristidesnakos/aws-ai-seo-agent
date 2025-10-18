@@ -152,7 +152,7 @@ Website owners and SEO professionals struggle to:
 **Description**: Use AWS AI services to analyze combined data and generate recommendations
 
 **Requirements**:
-- Integrate with AWS Bedrock (Claude 3 or similar LLM)
+- Integrate with AWS Bedrock (Claude Haiku 4.5 or similar LLM)
 - Process both PageSpeed and content data in single prompt
 - Generate structured recommendations
 - Categorize issues by:
@@ -275,7 +275,7 @@ For each recommendation:
 
 #### 4.1.4 AI Analysis Engine
 - **Technology**: AWS Lambda (Python 3.11) + AWS Bedrock
-- **Model**: Claude 3 Sonnet or equivalent
+- **Model**: Claude Haiku 4.5 or equivalent
 - **Responsibilities**:
   - Combine all data sources
   - Generate AI-powered recommendations
